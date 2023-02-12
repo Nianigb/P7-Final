@@ -1,6 +1,8 @@
 import './Home.css';
 import Header from "../../components/Header/Header";
 import Gallery from "../../components/Gallery/Gallery";
+import Banner from '../../components/Banner/Banner';
+import baniere from '../../assets/images/baniere.png';
 import useFetch from "../../hook/useFetch";
 
 const Home = (props) => {
@@ -9,6 +11,7 @@ const Home = (props) => {
   return (
     <>
       <Header />
+      <Banner image={baniere} text={"Chez vous, partout et ailleurs"} />
       <Gallery
         data={data}
         hasError={hasError}
