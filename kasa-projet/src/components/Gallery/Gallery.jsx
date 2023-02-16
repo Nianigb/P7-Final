@@ -1,31 +1,24 @@
-import { Link } from "react-router-dom";
-import Spinner from "../Spinner/Spinner";
-import Card from "../Card/Card";
 // eslint-disable-next-line
 import style from './Gallery.css';
+import React from 'react'
+import { Link } from "react-router-dom";
+import Card from "../Card/Card";
+import logements from '../../assets/logements.json'
 
-const Gallery = (props) => {
-    if (props.hasError) {
-        console.log(props.errorType);
-        return <div className="error">Une erreur est survenue...</div>;
-    }
 
+function Gallery() {
     return (
-        <div className="gallery_wrapper">
-            {props.isLoading ? (
-                <Spinner />
-            ) : (
-                props.data.map((housing) => (
-                    <Link key={housing.id} to={`/housing/${housing.id}`}>
-                        <Card
-                            key={housing.id}
-                            cover={housing.cover}
-                            title={housing.title}
-                        />
-                    </Link>
-                ))
-            )}
-        </div>
+        <section className="gallery_wrapper">
+            {logements.map((logement) => (
+                <Link key={logement.id} to={`/singleproduct/${logement.id}`}>
+                    <Card
+                        key={logement.id}
+                        cover={logement.cover}
+                        title={logement.title}
+                    />
+                </Link>
+            ))}
+        </section>
     );
 };
 

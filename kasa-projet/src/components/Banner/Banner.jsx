@@ -2,22 +2,22 @@
 // eslint-disable-next-line
 import style from "./Banner.css";
 
-const Banner = (props) => {
+const Banner = (banner) => {
     return (
         <div
             className="banner"
             style={{
-                height: `${props.height}px`
+                height: `${banner.height}px`
             }}
         >
             <img
                 className="banner_img"
                 style={{
-                    objectPosition: `${props.objectPosition}`
+                    objectPosition: `${banner.objectPosition}`
                 }}
-                src={props.image} alt="Bannière"
+                src={banner.image} alt="Bannière"
             />
-            <p>{props.text}</p>
+            <p>{banner.text}</p>
         </div>
     );
 };
