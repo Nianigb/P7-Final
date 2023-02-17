@@ -1,7 +1,10 @@
 .gallery_wrapper {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+    /* --- Pour afficher 4 images par ligne */
+    /* grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr)); */
+    /* --- Pour afficher que 3 images par ligne */
+    grid-template-columns: repeat(auto-fit, minmax(35.5rem, 1fr));
     column-gap: 6rem;
     row-gap: 5rem;
     margin-top: 4.3rem;

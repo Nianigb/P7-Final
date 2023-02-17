@@ -1,5 +1,4 @@
-// eslint-disable-next-line
-import style from './Card.css';
+import './Card.css';
 import React from 'react';
 
 const Card = (logements) => {

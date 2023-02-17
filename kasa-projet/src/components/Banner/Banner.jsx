@@ -1,6 +1,4 @@
-
-// eslint-disable-next-line
-import style from "./Banner.css";
+import "./Banner.css";
 
 const Banner = (banner) => {
     return (
