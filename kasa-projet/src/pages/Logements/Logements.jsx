@@ -4,9 +4,9 @@ import { useParams, Navigate } from 'react-router-dom';
 import logements from "../../assets/logements.json";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Error from "../Error/Error";
-// import Tag from "../../components/Tag/Tag";
-// import Etoile from "../../assets/img/Pages/Fiche-logement/Etoile.png";
-// import EtoileVide from "../../assets/img/Pages/Fiche-logement/EtoileVide.png";
+import Tag from "../../components/Tag/Tag";
+import EtoileRouge from "../../assets/icons/EtoileRouge.svg";
+import EtoileGrise from "../../assets/icons/EtoileGrise.svg";
 import Collapse from "../../components/Collapse/Collapse";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -16,13 +16,16 @@ function Logements() {
     const id = useParams();
     const produits = logements.find(logement => logement.id === id.id);
     if (produits === undefined) {
-        console.log("Erreur");
+        console.log("Aucun produit trouvé");
         return <Error />
+    } else {
+        console.table(produits);
     }
+
     /* Tags */
-    // const tagsLogement = produits?.tags.map((tags, index) => {
-    //     return <Tag key={index} nom={tags} />
-    // });
+    const tagsLogement = produits?.tags.map((tags, index) => {
+        return <Tag key={index} nom={tags} />
+    });
 
     /* Notes */
     let noteLogement = [];
@@ -31,11 +34,11 @@ function Logements() {
         if (index === parseInt(produits?.rating)) {
             etoileComplete = false;
         }
-        // if(etoileComplete === true) {
-        //     noteLogement.push(<img key={index} className="etoile" src={Etoile} alt={`${produits?.rating}/5`}/>)
-        // } else {
-        //     noteLogement.push(<img key={index} className="etoile" src={EtoileVide} alt={`${produits?.rating}/5`}/>)
-        // }
+        if (etoileComplete === true) {
+            noteLogement.push(<img key={index} className="etoile" src={EtoileRouge} alt={`${produits?.rating}/5`} />)
+        } else {
+            noteLogement.push(<img key={index} className="etoile" src={EtoileGrise} alt={`${produits?.rating}/5`} />)
+        }
     }
 
     /* Équipements */
@@ -55,7 +58,7 @@ function Logements() {
                                 <span className="titre-logement">{produits?.title}</span>
                                 <span className="endroit-logement">{produits?.location}</span>
                                 <div className="tags">
-                                    {/* {tagsLogement} */}
+                                    {tagsLogement}
                                 </div>
                             </div>
                             <div className="proprietaire-note">

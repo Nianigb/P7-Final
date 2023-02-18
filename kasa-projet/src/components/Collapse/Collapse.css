@@ -6,11 +6,10 @@
     margin-bottom: 10px;
     margin-bottom: 4.6rem;
     margin-top: 3.3rem;
-    padding-left: 10.8rem;
-    padding-right: 10.8rem;
 }
 
-.title-collapse {
+.titre-collapse {
+    color: #fff;
     margin-left: 10px;
 }
 
@@ -20,7 +19,6 @@
     align-items: center;
     border-radius: 6px;
     background-color: #FF6060;
-    color: #fff;
     font-weight: 500;
     font-size: 24px;
     cursor: pointer;
@@ -42,12 +40,18 @@
     margin: 0 0.9rem;
 }
 
-.arrow-collapse {
-    margin-right: 10px;
+.arrow-vector {
+    padding-right: 10px;
 }
 
 .arrow-collapse.true {
+    margin-right: 10px;
     transform: rotate(-180deg);
+}
+
+.about__item {
+    padding-left: 10.8rem;
+    padding-right: 10.8rem;
 }
 
 @media all and (max-width:768px) {
@@ -60,11 +64,8 @@
         min-height: 30px;
     }
 
-    .arrow-collapse {
-        width: 15px;
-        height: 9px;
-        padding-right: 10px;
-        padding-bottom: 5px;
+    .arrow-vector {
+        height: 10px;
     }
 
     .description-collapse {

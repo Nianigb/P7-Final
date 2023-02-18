@@ -3,17 +3,48 @@ import Collapse from '../../components/Collapse/Collapse';
 import Banner from "../../components/Banner/Banner";
 import banniere from "../../assets/images/banniere-aboutus.png";
 import Footer from '../../components/Footer/Footer';
+import { useEffect, useState } from "react";
+import useBrowserWidth from "../../assets/js/useBrowserWidth";
 
 function AboutUs() {
+    const dimension = useBrowserWidth();
+    const [fontSizeTitle, setfontSizeTitle] = useState();
+    const [fontSizeContent, setfontSizeContent] = useState();
+    const bannerHeight = 223;
+    const [objectPosition, setObjectPosition] = useState();
+    const [padding, setPadding] = useState();
+
+    useEffect(() => {
+
+        if (dimension >= 476) {
+            setfontSizeTitle(24);
+            setfontSizeContent(24);
+            setPadding("10.8rem");
+        } else if (dimension < 476) {
+            setfontSizeTitle(13);
+            setfontSizeContent(12);
+            setPadding("4rem");
+        }
+
+        if (dimension <= 390) {
+            setObjectPosition("0px 0px");
+            setPadding("0");
+        }
+
+    }, [dimension]);
     return (
         <>
             <Header />
-            <Banner image={banniere} origin="aboutus-page" />
+            <Banner
+                image={banniere}
+                origin="aboutus-page"
+                height={bannerHeight}
+                objectPosition={objectPosition} />
             <section className="about">
-                <div className="about__container">
+                <div className="about__container" style={{ 'padding-left': padding, 'padding-right': padding }}>
                     <Collapse
                         className="about__item"
-                        title="Fiabilité"
+                        titre="Fiabilité"
                         description={
                             <p className="about__item-text">
                                 Les annonces postées sur Kasa garantissent une
@@ -22,10 +53,12 @@ function AboutUs() {
                                 régulièrement vérifiées par nos équipes.
                             </p>
                         }
+                        fontSizeTitle={fontSizeTitle}
+                        fontSizeContent={fontSizeContent}
                     />
                     <Collapse
                         className="about__item"
-                        title="Respect"
+                        titre="Respect"
                         description={
                             <p className="about__item-text">
                                 La bienveillance fait partie des valeurs
@@ -34,10 +67,12 @@ function AboutUs() {
                                 entraînera une exclusion de notre plateforme.
                             </p>
                         }
+                        fontSizeTitle={fontSizeTitle}
+                        fontSizeContent={fontSizeContent}
                     />
                     <Collapse
                         className="about__item"
-                        title="Service"
+                        titre="Service"
                         description={
                             <p className="about__item-text">
                                 Nos équipes se tiennent à votre disposition pour
@@ -46,10 +81,12 @@ function AboutUs() {
                                 question.
                             </p>
                         }
+                        fontSizeTitle={fontSizeTitle}
+                        fontSizeContent={fontSizeContent}
                     />
                     <Collapse
                         className="about__item"
-                        title="Sécurité"
+                        titre="Sécurité"
                         description={
                             <p className="about__item-text">
                                 La sécurité est la priorité de Kasa. Aussi bien
@@ -63,6 +100,8 @@ function AboutUs() {
                                 hôtes.
                             </p>
                         }
+                        fontSizeTitle={fontSizeTitle}
+                        fontSizeContent={fontSizeContent}
                     />
                 </div>
             </section>
