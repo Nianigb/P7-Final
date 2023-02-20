@@ -3,10 +3,12 @@ import "./Carrousel.css";
 import fleche from "../../assets/icons/arrow.svg";
 
 function Carrousel({ images }) {
-    /* Crée un Hook d'état */
+    // Crée un Hook d'état
     let [imgAfficher, changerImg] = useState(0);
+    // Nombre d'image = le nombre totale des images d'un logement
     let nombreImg = images.length;
 
+    // On vérifie si on doit retourner l'image précédente suivant sa position sur le nombre d'image au total
     const imgPrecedente = () => {
         if (imgAfficher === 0) {
             changerImg(nombreImg - 1);
@@ -16,6 +18,7 @@ function Carrousel({ images }) {
         return (changerImg);
     };
 
+    // On vérifie si on doit retourner l'image suivante
     const imgSuivante = () => {
         if (imgAfficher === nombreImg - 1) {
             changerImg(nombreImg = 0);
@@ -38,6 +41,7 @@ function Carrousel({ images }) {
                 })
             }
             {
+                // Affiche la position de l'image par rapport au nombre d'images disponibles affichées
                 <p className="carrousel-nombre">
                     {imgAfficher+1}/{nombreImg}
                 </p>

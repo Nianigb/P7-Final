@@ -14,6 +14,7 @@ import Footer from "../../components/Footer/Footer";
 function Logements() {
     /* Récupère le bon logement */
     const id = useParams();
+    // On retrouve le logement qui correspond à un id existant pour ce dernier
     const produits = logements.find(logement => logement.id === id.id);
     if (produits === undefined) {
         console.log("Aucun produit trouvé");

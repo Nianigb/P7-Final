@@ -35,6 +35,7 @@ function AboutUs() {
     return (
         <>
             <Header />
+            {/* Utilisation du composant banner , personnalisé pour la page about us */}
             <Banner
                 image={banniere}
                 origin="aboutus-page"
@@ -43,6 +44,7 @@ function AboutUs() {
             <section className="about">
                 <div className="about__container" style={{ 'padding-left': padding, 'padding-right': padding }}>
                     <Collapse
+                        // On définie tous les éléments du composant collapse en fonction des informations à montrer
                         className="about__item"
                         titre="Fiabilité"
                         description={

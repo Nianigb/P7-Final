@@ -10,6 +10,7 @@ const Home = () => {
     <>
       <Header />
       <main>
+        {/* Utilisation du composant banner , personnalisé pour la page d'accueil */}
         <Banner image={banniere} text={"Chez vous, partout et ailleurs"} origin="home-page" />
         <Gallery />
       </main>
@@ -18,4 +19,5 @@ const Home = () => {
   )
 }
 
+// Ne pas oublier d'exporter la page Home
 export default Home;

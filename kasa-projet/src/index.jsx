@@ -11,6 +11,9 @@ import About from './pages/AboutUs/AboutUs';
 import Error from './pages/Error/Error';
 import Logements from './pages/Logements/Logements'
 
+
+// Création des routes pour l'application en single page
+// On définit l'index comme étant la racine du projet
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

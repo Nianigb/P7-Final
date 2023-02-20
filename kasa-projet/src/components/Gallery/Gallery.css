@@ -1,4 +1,4 @@
-.gallery_wrapper {
+.cadre_gallery {
     display: grid;
     width: 100%;
     /* --- Pour afficher 4 images par ligne */
@@ -27,7 +27,7 @@
 
 /*** Medias Queries ***/
 @media screen and (max-width : 768px) {
-    .gallery_wrapper {
+    .cadre_gallery {
         padding-left: 0;
         padding-right: 0;
         padding-top: 0;

@@ -1,8 +1,7 @@
-// eslint-disable-next-line
-import style from './Footer.css';
+import './Footer.css';
 import logo from '../../assets/logo/kasa-logo-white.svg';
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className="footer">
       <img className="header_logo" src={logo} alt="Pied de page Kasa" />

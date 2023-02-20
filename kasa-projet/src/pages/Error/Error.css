@@ -1,25 +1,21 @@
 .not_found {
-    height: calc(120vh - 286px);
-    position: relative;
+    /* Responsive */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     color: #ff6060;
+    margin-top: 3rem;
 }
 
 .not_found h1 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     font-size: 28.8rem;
     font-weight: 700;
-    line-height: 41.069rem;
+    line-height: 41.5rem;
 }
 
 .not_found p {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
     font-size: 3.6rem;
     font-weight: 500;
@@ -28,15 +24,12 @@
 }
 
 .not_found a {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, 50%);
     text-align: center;
     font-size: 1.8rem;
     font-weight: 500;
     line-height: 2.567rem;
     width: 100%;
+    margin: 10rem;
 }
 
 .not_found a:visited,
