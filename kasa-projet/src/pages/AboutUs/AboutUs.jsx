@@ -42,7 +42,7 @@ function AboutUs() {
                 height={bannerHeight}
                 objectPosition={objectPosition} />
             <section className="about">
-                <div className="about__container" style={{ 'padding-left': padding, 'padding-right': padding }}>
+                <div className="about__container" style={{ paddingLeft: padding, paddingRight: padding }}>
                     <Collapse
                         // On définie tous les éléments du composant collapse en fonction des informations à montrer
                         className="about__item"
